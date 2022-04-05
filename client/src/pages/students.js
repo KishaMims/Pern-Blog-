@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Form from "../pages/form";
+import Form from "./createblog";
 
 function Students() {
 

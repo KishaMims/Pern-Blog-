@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 });
 
 //create the get request
-app.get('/api/students', cors(), async (req, res) => {
+app.get('/blogs', cors(), async (req, res) => {
     // const STUDENTS = [
 
     //     { id: 1, firstName: 'Lisa', lastName: 'Lee' },
@@ -26,25 +26,37 @@ app.get('/api/students', cors(), async (req, res) => {
     // ];
     // res.json(STUDENTS);
     try{
-        const { rows: students } = await db.query('SELECT * FROM students');
-        res.send(students);
+        const { rows: posts } = await db.query('SELECT * FROM posts');
+        res.send(posts);
     } catch (e){
         return res.status(400).json({e});
     }
 });
 
 //create the POST request
-app.post('/api/students', cors(), async (req, res) => {
-    const newUser = { firstname: req.body.firstname, lastname: req.body.lastname }
-    console.log([newUser.firstname, newUser.lastname]);
-    const result = await db.query(
-        'INSERT INTO students(firstname, lastname) VALUES($1, $2) RETURNING *',
-        [newUser.firstname, newUser.lastname]
-    );
-    console.log(result.rows[0]);
-    res.json(result.rows[0]);
-});
-
+// app.post('/api/blogs', cors(), async (req, res) => {
+//     const newUser = { firstname: req.body.firstname, lastname: req.body.lastname }
+//     console.log([newUser.firstname, newUser.lastname]);
+//     const result = await db.query(
+//         'INSERT INTO students(firstname, lastname) VALUES($1, $2) RETURNING *',
+//         [newUser.firstname, newUser.lastname]
+//     );
+//     console.log(result.rows[0]);
+//     res.json(result.rows[0]);
+// });
+app.post('/blogs',async(req,res) => {
+    try {
+        //await
+        // console.log(req.body);;
+        const {title, textcontent, recipecontent, category} = req.body;
+        const newBlogPost = await db.query(
+            "INSERT INTO posts (title, recipecontent, textcontent, category) VALUES ($1,$2,$3,$4) RETURNING *",[title, recipecontent, textcontent, category]
+        );
+            res.json(newBlogPost.rows[0]);
+    } catch (error) {
+        console.log(error.message);
+    }
+})
 // console.log that your server is up and running
 app.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);

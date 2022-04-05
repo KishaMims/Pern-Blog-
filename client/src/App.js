@@ -6,6 +6,7 @@ import About from './pages/about';
 import Blogs from './pages/blogs';
 import SignUp from './pages/signup';
 import Contact from './pages/contact';
+import Create from './pages/createblog';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
        <Route path='/contact' element={<Contact/>}/>
       <Route path='/blogs' element={<Blogs/>}/>
       <Route path='/sign-up' element={<SignUp/>}/>
+      <Route path='/create-new-blog-post' element={<Create/>}/>
      </Routes>
    </Router>
   );
