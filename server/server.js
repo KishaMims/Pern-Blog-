@@ -33,6 +33,26 @@ app.get('/blogs', cors(), async (req, res) => {
     }
 });
 
+app.get('/blogs/:id', cors(), async (req, res) => {
+    const {id} = req.params;
+    // const STUDENTS = [
+
+    //     { id: 1, firstName: 'Lisa', lastName: 'Lee' },
+
+    //     { id: 2, firstName: 'Eileen', lastName: 'Long' },
+    //     { id: 3, firstName: 'Fariba', lastName: 'Dako' },
+    //     { id: 4, firstName: 'Cristina', lastName: 'Rodriguez' },
+    //     { id: 5, firstName: 'Andrea', lastName: 'Trejo' },
+    // ];
+    // res.json(STUDENTS);
+    try{
+        const posts = await db.query('SELECT * FROM posts WHERE id = $1',[id]);
+        res.json(posts.rows[0]);
+    } catch(e){
+        return res.status(400).json({e});
+    }
+});
+
 //create the POST request
 // app.post('/api/blogs', cors(), async (req, res) => {
 //     const newUser = { firstname: req.body.firstname, lastname: req.body.lastname }
@@ -53,6 +73,22 @@ app.post('/blogs',async(req,res) => {
             "INSERT INTO posts (title, recipecontent, textcontent, category) VALUES ($1,$2,$3,$4) RETURNING *",[title, recipecontent, textcontent, category]
         );
             res.json(newBlogPost.rows[0]);
+    } catch (error) {
+        console.log(error.message);
+    }
+})
+
+
+
+app.delete('/blogs/:id',async(req,res) => {
+    
+        //await
+        // console.log(req.body);;
+       const {id} = req.params
+       try {
+       const deletePost = await db.query("DELETE FROM posts WHERE id = $1",[id])
+       res.send(deletePost);
+       res.json('Blog post was deleted!');
     } catch (error) {
         console.log(error.message);
     }
