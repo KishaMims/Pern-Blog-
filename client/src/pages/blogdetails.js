@@ -17,6 +17,11 @@ const handleOnClick = () => {
     navigate('/home')
     })
 }
+
+const handleClick = () => {
+  navigate(`/blogs/${id}/update`)
+}
+
   return (
     <div className="blog-details">
         {error && <div>{error}</div>}
@@ -28,6 +33,7 @@ const handleOnClick = () => {
                 <div> { blog.recipecontent }</div>
                 <div> { blog.category }</div>
                 <button onClick={handleOnClick}>Delete Post</button>
+                <button onClick={handleClick}>Update Post</button>
             </article>
         )}
     </div>

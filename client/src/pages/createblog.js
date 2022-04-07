@@ -12,23 +12,6 @@ const Create = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const blog = { title, recipecontent, textcontent, category };
-
-
-        //     const postBlog = (newBlog) => {
-        //         fetch('http://localhost:5000/blogs/', {
-        //         method: 'POST',
-        //         headers: {'Content-Type': 'application/json'},
-        //         body: JSON.stringify(blog)
-        //     }).then((response) => {
-        //         return response.json()
-        //     }).then((data) => {
-        //         props.addBlog(data);
-        //        navigate('/blogs');
-        //     })
-        // }
-
-
-
         fetch('http://localhost:5000/blogs/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },

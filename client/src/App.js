@@ -8,6 +8,7 @@ import SignUp from './pages/signup';
 import Contact from './pages/contact';
 import Create from './pages/createblog';
 import BlogDetails from './pages/blogdetails';
+import UpdatePost from './pages/updatepost';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Route path='/sign-up' element={<SignUp/>}/>
       <Route path='/create-new-blog-post' element={<Create/>}/>
       <Route path='/blogs/:id' element={<BlogDetails/>}/>
+      <Route path='/blogs/:id/update' element={<UpdatePost/>}/>
      </Routes>
    </Router>
   );
