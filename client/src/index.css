@@ -24,7 +24,8 @@ body {
 }
 .blog-link {
   text-decoration: none;
-  color: orangered
+  color: orangered;
+  justify-content: center;
 }
 ul
 {

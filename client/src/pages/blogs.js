@@ -29,13 +29,13 @@ const [blogs, setBlogs] = useState([]);
   return (
     <div className='blog-list'>
       <h1>Blogs</h1>
+      <Link className='blog-link' to="/create-new-blog-post">Create A New Blog Here</Link>
       <ul>
       {blogs.map((blog, index) =>
       <li className='list' key={index}> <br /> 
         <h2>{blog.title}</h2><br /> {blog.textcontent}<br /> {blog.recipecontent} <br /> <br />Blog Posted: {moment(blog.postdate).format('MM/DD/YYYY')} <br /> <br />{blog.category}
       </li>)}
       </ul>
-      <Link className='blog-link' to="/create-new-blog-post">Create Blog</Link>
     </div>
   )
 }

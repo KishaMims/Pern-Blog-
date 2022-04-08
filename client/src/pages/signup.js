@@ -1,6 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function SignUp (){
+const navigate = useNavigate(); 
+
+
+const handleClick = () => {
+    navigate('/about')
+  }
     return (
         <div>     
   <head>
@@ -16,7 +23,7 @@ function SignUp (){
       </div>
       <div className="sign-up-input">
         <input type="text" className="sign-up-button" id="email" name="email" placeholder="NAME@EXAMPLE.COM"/>
-        <input type="submit" className="sign-up-button" id="submit" value="SIGN UP"/>
+        <input type="submit" className="sign-up-button" id="submit" value="SIGN UP" onClick={handleClick}/>
       </div>
     </form>
     </div>

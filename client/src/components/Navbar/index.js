@@ -4,30 +4,30 @@ import { Nav, NavLink, NavMenu } from "./NavBarElements.js";
 
 const Navbar = () => {
     return (
-    <>
+    <> 
     <Nav>
         <NavMenu>
             <h2 className='title-tag'>🍹Sip Me Baby One More Time🍹</h2>
             <NavLink to="/about" activeStyle>
-                About
+                About 🎉 
             </NavLink>
             <NavLink to="/home" activeStyle>
-               Home
+               Home 🖥
             </NavLink>
             <NavLink to="/contact" activeStyle>
-                Contact Me
+                Contact Me 📱
             </NavLink>
             <NavLink to="/blogs" activeStyle>
-                Blogs
+                Blogs  📝 
             </NavLink>
             <NavLink to="/sign-up" activeStyle>
-                Sign Up
+                Sign Up 📧 
             </NavLink>
             <NavLink to="/search" activeStyle>
-                Search
+                Search 🔍
             </NavLink>
             <NavLink to="/create-new-blog-post" activeStyle>
-                Create New Blog Post
+                Create New Blog Post 🖋 
             </NavLink>
         </NavMenu>
     </Nav>
