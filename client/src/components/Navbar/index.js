@@ -7,6 +7,7 @@ const Navbar = () => {
     <>
     <Nav>
         <NavMenu>
+            <h2 className='title-tag'>🍹Sip Me Baby One More Time🍹</h2>
             <NavLink to="/about" activeStyle>
                 About
             </NavLink>

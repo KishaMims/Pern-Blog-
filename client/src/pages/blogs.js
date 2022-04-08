@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
+import moment from 'moment';
 
 
 function Blogs() {
@@ -24,14 +25,14 @@ const [blogs, setBlogs] = useState([]);
         //   setBlogs((blog) => [...blogs, blog]);
         // }
     
-     
+
   return (
-    <div>
+    <div className='blog-list'>
       <h1>Blogs</h1>
       <ul>
       {blogs.map((blog, index) =>
-      <li key={index}>
-        {blog.title} {blog.textcontent} {blog.recipecontent} {blog.postdate} {blog.category}
+      <li key={index}> 
+        <br></br>{blog.title} <br></br>{blog.textcontent} <br></br>{blog.recipecontent} <br></br>{moment(blog.postdate).format('MM/DD/YYYY')} <br></br> {blog.category}
       </li>)}
       </ul>
       <Link to="/create-new-blog-post">Create Blog</Link>
@@ -41,3 +42,4 @@ const [blogs, setBlogs] = useState([]);
 
 
 export default Blogs;
+

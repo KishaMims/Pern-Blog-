@@ -23,7 +23,7 @@ const handleClick = () => {
 }
 
   return (
-    <div className="blog-details">
+    <div className="container-fluid">
         {error && <div>{error}</div>}
         {blog && (
             <article>

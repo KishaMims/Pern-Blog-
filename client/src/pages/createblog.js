@@ -23,7 +23,7 @@ const Create = () => {
 
    
     return (
-        <div className='create'>
+        <div>
             <h1>Add New Blog Post Here</h1>
             <form onSubmit={handleSubmit}>
                 <fieldset>

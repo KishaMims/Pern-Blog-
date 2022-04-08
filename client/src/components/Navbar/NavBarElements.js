@@ -6,13 +6,13 @@ export const Nav = styled.nav`
   background: pink;
   height: 85px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 0.2rem calc((100vw - 1000px) / 2);
   z-index: 12;
 `;
 
 export const NavLink = styled(Link)`
-  color: white;
+  color: orangered;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -20,13 +20,13 @@ export const NavLink = styled(Link)`
   height: 100%;
   cursor: pointer;
   &.active {
-    color: white;
+    color: orangered;
   }
 `;
   
 export const Bars = styled(FaBars)`
   display: none;
-  color: white;
+  color: orangered;
   @media screen and (max-width: 768px) {
     display: block;
     position: absolute;
@@ -40,7 +40,7 @@ export const Bars = styled(FaBars)`
   
 export const NavMenu = styled.div`
   display: flex;
-  align-items: center;
+  align-items: left;
   margin-right: -24px;
   /* Second Nav */
   /* margin-right: 24px; */
