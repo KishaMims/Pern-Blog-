@@ -9,6 +9,7 @@ import Contact from './pages/contact';
 import Create from './pages/createblog';
 import BlogDetails from './pages/blogdetails';
 import UpdatePost from './pages/updatepost';
+import Search from './pages/search';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
        <Route path='/contact' element={<Contact/>}/>
       <Route path='/blogs' element={<Blogs/>}/>
       <Route path='/sign-up' element={<SignUp/>}/>
+      <Route path='/search' element={<Search/>}/>
       <Route path='/create-new-blog-post' element={<Create/>}/>
       <Route path='/blogs/:id' element={<BlogDetails/>}/>
       <Route path='/blogs/:id/update' element={<UpdatePost/>}/>

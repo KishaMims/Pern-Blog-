@@ -30,6 +30,9 @@ ul
 {
     list-style-type: none;
 }
+.search{
+  list-style-type: none;
+}
 .HomeTitle{
   text-align: center;
 }

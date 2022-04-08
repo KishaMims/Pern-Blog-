@@ -32,7 +32,7 @@ const [blogs, setBlogs] = useState([]);
       <ul>
       {blogs.map((blog, index) =>
       <li className='list' key={index}> <br /> 
-        <h2>{blog.title}</h2><br /> {blog.textcontent}<br /> {blog.recipecontent} <br /> Blog Posted: {moment(blog.postdate).format('MM/DD/YYYY')} <br /> {blog.category}
+        <h2>{blog.title}</h2><br /> {blog.textcontent}<br /> {blog.recipecontent} <br /> <br />Blog Posted: {moment(blog.postdate).format('MM/DD/YYYY')} <br /> <br />{blog.category}
       </li>)}
       </ul>
       <Link className='blog-link' to="/create-new-blog-post">Create Blog</Link>
