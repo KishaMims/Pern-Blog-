@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 //creates an endpoint for the route /api
-app.get('/home', (req, res) => {
+app.get('/about', (req, res) => {
     res.json({ message: 'Hello from My ExpressJS' });
 });
 
