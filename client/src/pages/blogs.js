@@ -31,11 +31,11 @@ const [blogs, setBlogs] = useState([]);
       <h1>Blogs</h1>
       <ul>
       {blogs.map((blog, index) =>
-      <li key={index}> 
-        <br></br>{blog.title} <br></br>{blog.textcontent} <br></br>{blog.recipecontent} <br></br>{moment(blog.postdate).format('MM/DD/YYYY')} <br></br> {blog.category}
+      <li className='list' key={index}> <br /> 
+        <h2>{blog.title}</h2><br /> {blog.textcontent}<br /> {blog.recipecontent} <br /> Blog Posted: {moment(blog.postdate).format('MM/DD/YYYY')} <br /> {blog.category}
       </li>)}
       </ul>
-      <Link to="/create-new-blog-post">Create Blog</Link>
+      <Link className='blog-link' to="/create-new-blog-post">Create Blog</Link>
     </div>
   )
 }

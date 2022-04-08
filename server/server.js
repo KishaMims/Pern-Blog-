@@ -2,7 +2,7 @@
 /* eslint-disable max-len */
 const express = require('express');
 const cors = require('cors');
-require('dotenv').config()
+require('dotenv').config();
 const db = require('../server/db/db-connection.js');
 // const { resourceLimits } = require('worker_threads');
 

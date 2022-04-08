@@ -25,12 +25,12 @@ const Create = () => {
     return (
         <div>
             <h1>Add New Blog Post Here</h1>
-            <form onSubmit={handleSubmit}>
+            <form className="form" onSubmit={handleSubmit}>
                 <fieldset>
                     <label>Blog Title</label>
                     <input
                         type="text"
-                        id="add-blog-title"
+                        className="add-blog-title"
                         placeholder=""
                         required
                         value={title}
