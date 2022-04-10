@@ -15,27 +15,48 @@ const { data: blog, error } = useFetch(`http://localhost:5000/blogs/${id}`);
 console.log(blog);
 const navigate = useNavigate();
 
+
+  // confirmAlert = () => ({
+  //     title: 'Confirm to submit',
+  //     message: 'Are you sure you want to do this?',
+  //     buttons: [
+  //       {
+  //         label: 'Yes',
+  //         onClick = () => {
+  //           fetch(`http://localhost:5000/blogs/${id}`,{
+  //           method: 'DELETE'
+  //           }).then(()=> {
+  //           navigate('/home')
+  //           }
+  //           ,
+  //       {
+  //         label: 'No',
+  //         onClick: () => alert('Click No')
+  //       }
+  //     ]),
+  //   }
+
 const handleOnClick = () => {
     fetch(`http://localhost:5000/blogs/${id}`,{
     method: 'DELETE'
     }).then(()=> {
     navigate('/home')
     })
-    confirmAlert({
-      title: 'Confirm to submit',
-      message: 'Are you sure to do this.',
-      buttons: [
-        {
-          label: 'Yes',
-          onClick: () => alert('Click Yes')
-        },
-        {
-          label: 'No',
-          onClick: () => alert('Click No')
-        }
+//     // confirmAlert({
+//     //   title: 'Confirm to submit',
+//     //   message: 'Are you sure to do this.',
+//     //   buttons: [
+//     //     {
+//     //       label: 'Yes',
+//     //       onClick: () => alert('Click Yes') 
+//     //     },
+//     //     {
+//     //       label: 'No',
+//     //       onClick: () => alert('Click No')
+//     //     }
      
-      ]
-    });
+//     //   ]
+//     // });
   };
 
   
